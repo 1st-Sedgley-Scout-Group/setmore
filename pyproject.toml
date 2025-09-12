@@ -1,0 +1,100 @@
+[project]
+name = "1st-sedgley-template"
+version = "0.1.0"
+requires-python = "==3.12.*"
+dependencies = [
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "pre-commit>=4.1.0",
+]
+
+[tool.ruff]
+target-version = "py312"
+fix = true
+line-length = 140
+
+[tool.ruff.lint]
+select = [
+    # Core Python Style and Errors
+    "E",  # PEP 8 (Blank lines, indentation, etc.)
+    "F",  # Pyflakes (Common Python errors)
+    "W",  # Pycodestyle (Warnings)
+
+    # Naming and Documentation
+    "N",  # pep8-naming (Naming conventions)
+    "D",  # pydocstyle (Docstring style)
+    "DOC", # pydoclint (Docstrings)
+
+    # Imports
+    "I",  # isort (Import sorting)
+    "ICN", # flake8-import-conventions (Import Conventions)
+
+    # Code Style and Best Practices
+    "UP", # pyupgrade (Modernizing Python syntax)
+    "S",  # flake8-simplify (Simplify code)
+    "C4", # flake8-comprehensions (Comprehension style)
+    "SIM",# flake8-simplify (Code simplification)
+    "RET", # flake8-return (Return statements)
+    "SLF", # flake8-self (Self-argument conventions)
+    "COM", # flake8-commas (Trailing Commas)
+    "ASYNC", # flake8-async (Asyncio-specific rules)
+    "B008", # flake8-bugbear (Function calls in argument defaults)
+    "B012", # flake8-bugbear (Exceptions in finally blocks)
+    "INP", # Checks for packages that are missing an __init__.py file.
+
+    # Type Annotations
+    "ANN", # flake8-annotations (Type annotations)
+
+    # Unused Code and Arguments
+    "ARG", # flake8-unused-arguments (Unused function arguments)
+    "ERA", # eradicate (Finds dead code)
+
+    # Refactoring Suggestions
+    "FURB", # refurb (Suggests code refactoring)
+
+    # Specialized Checks
+    "DTZ", # flake8-datetimez (Datetime/timezone issues)
+    "PD", # pandas-vet (Pandas-specific linting)
+    "NPY", # numpy-style (Numpy coding style)
+    "FAST", # flake8-fastapi (FastAPI-specific linting)
+    "YTT", # flake8-yield-from-top-level (Yield from top level)
+    "PT", # flake8-pytest-style (Pytest style)
+    "PL", # Pylint (Pylint rules)
+
+    # Ruff-Specific Rules (These often cover a broader range)
+    "RUF", # Ruff-specific rules (performance, best practices, etc.)
+]
+
+ignore = [
+    # Indentation and Whitespace
+    "E111", # Indentation with invalid multiple
+    "E114", # Indentation with invalid multiple comment
+    "E117", # Over-indented
+    "W191", # Tab indentation
+    "E501", # Line length
+
+    # Docstrings
+    "D206", # Docstring tab indentation
+    "D300", # Triple single quotes
+
+    # Commas
+    "COM812", # Missing trailing comma
+    "COM819", # Prohibited trailing comma
+
+    # Functions
+    "PLR0913", # Too many arguments
+]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+# Ignore S101 (assert) and other test-specific warnings
+# for all files that start with 'test_'
+"*/__init__.py" = ["F401"]
