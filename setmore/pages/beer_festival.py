@@ -30,13 +30,13 @@ st.table(
 st.header("BBQ")
 st.session_state.bbq_data = st.session_state.setmore_data.bbq()
 st.subheader("Friday")
-st.dateframe(
+st.dataframe(
     st.session_state.bbq_data[st.session_state.bbq_data["_timestamp"].dt.day_name() == "Friday"]
     .drop(columns=["_timestamp"])
     .set_index("Timestamp")
 )
 st.subheader("Saturday")
-st.dateframe(
+st.dataframe(
     st.session_state.bbq_data[st.session_state.bbq_data["_timestamp"].dt.day_name() == "Saturday"]
     .drop(columns=["_timestamp"])
     .set_index("Timestamp")
