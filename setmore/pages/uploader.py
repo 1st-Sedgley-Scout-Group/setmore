@@ -1,7 +1,7 @@
 """Script to upload and process SetMore booking CSV files for different events."""
 import streamlit as st
 
-from ..porcessor.beer_festival import SetMoreBeerFestivalProcessor
+from ..processor.beer_festival import SetMoreBeerFestivalProcessor
 
 PROCESSOR = {"Beer Festival": SetMoreBeerFestivalProcessor}
 
