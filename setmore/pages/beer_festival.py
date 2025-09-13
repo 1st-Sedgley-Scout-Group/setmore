@@ -15,7 +15,7 @@ st.markdown(f"Dates: {date_s} to {date_e}")
 st.header("Bars")
 st.session_state.bar_data = st.session_state.setmore_data.bars()
 st.subheader("Friday")
-st.dataframe(
+st.table(
     st.session_state.bar_data[st.session_state.bar_data["_timestamp"].dt.day_name() == "Friday"]
     .drop(columns=["_timestamp"])
     .set_index("Timestamp")
