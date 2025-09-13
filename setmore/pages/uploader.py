@@ -15,7 +15,7 @@ st.markdown("Upload your SetMore booking CSV file to process and download format
 st.session_state.event = st.selectbox("Select Event", options=["Beer Festival"])
 
 ## Processing Data
-st.session_state.uploaded_file = st.file_uploader("Choose a CSV file", type="csv", help="Upload your SetMore booking data CSV file")
+st.session_state.uploaded_file = st.file_uploader("Choose a CSV file", type=["csv", 'xlsx'], help="Upload your SetMore booking data CSV file")
 
 if st.session_state.uploaded_file:
     try:

@@ -1,6 +1,7 @@
 """Script for the beer festival bookings overview page."""
 import streamlit as st
 
+
 with st.container(horizontal_alignment="right"):
     if st.button("Upload new data", type="secondary"):
         st.switch_page("setmore/pages/uploader.py")
@@ -15,7 +16,7 @@ st.header("Bars")
 st.session_state.bar_data = st.session_state.setmore_data.bars()
 st.subheader("Friday")
 st.dataframe(
-    st.session_state.bar_data[st.session_state.bar_data["_timestamp"].dt.day_name() == "Tuesday"]
+    st.session_state.bar_data[st.session_state.bar_data["_timestamp"].dt.day_name() == "Friday"]
     .drop(columns=["_timestamp"])
     .set_index("Timestamp")
 )

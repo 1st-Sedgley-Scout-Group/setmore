@@ -16,10 +16,10 @@ class SetMoreBeerFestivalProcessor:
     """
 
     BAR_ORDER: ClassVar[dict] = {
-        "Beer": 0,
-        "Cider": 1,
-        "Gin": 3,
-        "Ticket": 2,
+        "Beer Bar": 0,
+        "Cider Bar": 1,
+        "Gin & Rum Bar": 3,
+        "Tickets at the Gate": 2,
     }
 
     def __init__(self, file_path: str) -> None:
@@ -35,7 +35,10 @@ class SetMoreBeerFestivalProcessor:
 
     def read_data(self) -> pd.DataFrame:
         """Read booking data from a CSV file."""
-        return pd.read_csv(self._file_path)
+        try:
+            return pd.read_csv(self._file_path)
+        except Exception:
+            return pd.read_excel(self._file_path)
 
     def format_data(self) -> pd.DataFrame:
         """Clean and format the booking data for analysis."""
