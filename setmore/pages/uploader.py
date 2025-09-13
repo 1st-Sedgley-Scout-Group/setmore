@@ -5,7 +5,7 @@ from setmore.processor.beer_festival import SetMoreBeerFestivalProcessor
 
 PROCESSOR = {"Beer Festival": SetMoreBeerFestivalProcessor}
 
-PAGES = {"Home": "pages/uploader.py", "Beer Festival": "pages/beer_festival.py"}
+PAGES = {"Home": "setmore/pages/uploader.py", "Beer Festival": "setmore/pages/beer_festival.py"}
 
 st.set_page_config(page_title="SetMore Schedules", page_icon="📅", layout="wide")
 

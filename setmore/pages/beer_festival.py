@@ -3,7 +3,7 @@ import streamlit as st
 
 with st.container(horizontal_alignment="right"):
     if st.button("Upload new data", type="secondary"):
-        st.switch_page("pages/uploader.py")
+        st.switch_page("setmore/pages/uploader.py")
 
 st.title("🍺 Beer Festival Bookings Overview")
 

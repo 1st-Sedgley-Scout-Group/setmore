@@ -8,4 +8,4 @@ st.set_page_config(
         layout="wide"
     )
 
-st.navigation([st.Page("pages/uploader.py", title="Home", default=True), st.Page("pages/beer_festival.py", title="Beer Festival")], position='hidden').run()
+st.navigation([st.Page("setmore/pages/uploader.py", title="Home", default=True), st.Page("setmore/pages/beer_festival.py", title="Beer Festival")], position='hidden').run()
